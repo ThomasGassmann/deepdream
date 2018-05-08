@@ -112,6 +112,6 @@ render_deepdream(
     tf.square(layer_tensor),
     local_image,
     args.iterations if args.iterations is not None else 2,
-    args.step,
-    args.octaves,
-    args.octaves_scale)
+    args.step if args.step is not None else 1.5,
+    args.octaves if args.octaves is not None else 4,
+    args.octaves_scale if args.octaves is not None else 2)
